@@ -5,18 +5,20 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int gappx     = 18;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
-static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+static const int topbar             = 0;        /* 0 means bottom bar */
+static const char *fonts[]          = { "ComicCode Nerd Font:size=8" };
+static const char dmenufont[]       = "ComicCode Nerd Font:size=8";
+static const char *colors[][4]      = {
+	/*               fg         bg         border     float bd. */
+	[SchemeNorm] = { "#c8d3f5", "#222436", "#222436", "#ffc777" },
+	[SchemeSel]  = { "#82aaff", "#222436", "#82aaff", "#ffc777" },
+};
+static const unsigned int baralpha = 10;
+static const unsigned int borderalpha = 208;
+static const unsigned int alphas[][3] = {
+    /*               fg      bg        border*/
+	[SchemeNorm] = { OPAQUE, baralpha, borderalpha },
+	[SchemeSel]  = { OPAQUE, baralpha, borderalpha },
 };
 
 /* tagging */
@@ -35,14 +37,14 @@ static const Rule rules[] = {
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
-static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
+static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
+	{ "[|]",      tile },    /* first entry is default */
+	{ "~~~",      NULL },    /* no layout function means floating behavior */
+	{ "O_O",      monocle },
 	{ "|O|",      tcl },
 };
 
