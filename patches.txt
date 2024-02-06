@@ -7,3 +7,4 @@ dwm-centeredmaster-6.1.diff # Possibly is's just tcl.c.
 dwm-float-border-color-20231008-3a7ea45f.diff
 dwm-killunsel-ceac8c91ff.diff
 dwm-rotatestack-20161021-ab9571b.diff
+dwm-center-6.2.diff

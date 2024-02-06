@@ -29,9 +29,13 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	/* class           instance    title       tags mask  iscentered  isfloating   monitor */
+	{ "Gimp",          NULL,       NULL,       0,         0,          1,           -1 },
+	{ "Firefox",       NULL,       NULL,       1 << 8,    0,          0,           -1 },
+	{ "Pavucontrol",   NULL,       NULL,       0,         1,          1,           -1 },
+	{ "stpulsemixer",  NULL,       NULL,       0,         1,          1,           -1 },
+	{ "stdashboard",   NULL,       NULL,       0,         1,          1,           -1 },
+	{ "stcentered",    NULL,       NULL,       0,         1,          1,           -1 },
 };
 
 /* layout(s) */
@@ -66,7 +70,9 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *screen_capture_cmd[]       = { "screen_capture", NULL };
 static const char *screen_capture_area_cmd[]  = { "screen_capture_area", NULL };
 static const char *pavucontrol_cmd[] = { "pavucontrol", NULL };
-static const char *pulsemixer_cmd[]  = { "st", "-e", "pulsemixer", NULL };
+static const char *pulsemixer_cmd[]  = { "st", "-c", "stpulsemixer", "-e", "pulsemixer", NULL };
+static const char *dashboard_cmd[]   = { "st", "-c", "stdashboard", "-e", "dashboard", "looped", NULL };
+static const char *st_centered_cmd[]   = { "st", "-c", "stcentered", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -78,6 +84,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Print,  spawn,          {.v = screen_capture_area_cmd } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = pulsemixer_cmd } },
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = pavucontrol_cmd } },
+	{ MODKEY|ShiftMask,             XK_d,      spawn,          {.v = dashboard_cmd } },
+	{ MODKEY|Mod1Mask,              XK_Return, spawn,          {.v = st_centered_cmd } },
 
 	/* ----- Control ----- */
 	{ MODKEY,                       XK_m,      togglebar,      {0} },
