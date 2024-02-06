@@ -16,7 +16,7 @@
  * on each monitor. Each client contains a bit array to indicate the tags of a
  * client.
  *
- * Keys and tagging rules are organized as arrays and defined in config.h.
+ * Keys and tagging rules are organized as arrays and defined in config.def.h.
  *
  * To understand everything else, start reading main().
  */
@@ -285,7 +285,7 @@ static int depth;
 static Colormap cmap;
 
 /* configuration, allows nested code to access above variables */
-#include "config.h"
+#include "config.def.h"
 
 /* post-config macros */
 #define WIDTH(X)                ((X)->w + 2 * (X)->bw + gappx)
