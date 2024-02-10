@@ -8,3 +8,4 @@ dwm-float-border-color-20231008-3a7ea45f.diff
 dwm-killunsel-ceac8c91ff.diff
 dwm-rotatestack-20161021-ab9571b.diff
 dwm-center-6.2.diff
+dwm-hide_vacant_tags-6.3.diff
