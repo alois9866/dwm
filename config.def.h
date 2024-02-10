@@ -60,34 +60,8 @@ static const Layout layouts[] = {
 	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
-/* helper for spawning shell commands in the pre dwm-5.0 fashion */
-#define SHCMD(cmd) { .v = (const char*[]){ "/bin/zsh", "-c", cmd, NULL } }
-
-/* commands */
-static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, NULL };
-static const char *termcmd[]  = { "st", NULL };
-static const char *screen_capture_cmd[]       = { "screen_capture", NULL };
-static const char *screen_capture_area_cmd[]  = { "screen_capture_area", NULL };
-static const char *pavucontrol_cmd[] = { "pavucontrol", NULL };
-static const char *pulsemixer_cmd[]  = { "st", "-c", "stpulsemixer", "-e", "pulsemixer", NULL };
-static const char *dashboard_cmd[]   = { "st", "-c", "stdashboard", "-e", "dashboard", "looped", NULL };
-static const char *st_centered_cmd[]   = { "st", "-c", "stcentered", NULL };
-
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-
-	/* ----- Run ----- */
-	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_Print,  spawn,          {.v = screen_capture_cmd } },
-	{ MODKEY|ShiftMask,             XK_Print,  spawn,          {.v = screen_capture_area_cmd } },
-	{ MODKEY,                       XK_p,      spawn,          {.v = pulsemixer_cmd } },
-	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = pavucontrol_cmd } },
-	{ MODKEY|ShiftMask,             XK_d,      spawn,          {.v = dashboard_cmd } },
-	{ MODKEY|Mod1Mask,              XK_Return, spawn,          {.v = st_centered_cmd } },
-
-	/* ----- Control ----- */
 	{ MODKEY,                       XK_m,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -135,7 +109,7 @@ static const Button buttons[] = {
 	/* click                event mask      button          function        argument */
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
-	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
+	/* { ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } }, */
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
