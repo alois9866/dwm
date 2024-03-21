@@ -3,7 +3,6 @@ dwm-adjacenttag-6.2.diff
 dwm-refreshrate-20230826-9554a10.diff
 dwm-uselessgap-20211119-58414bee958f2.diff
 dwm-notitle-6.2.diff
-dwm-centeredmaster-6.1.diff # Possibly is's just tcl.c.
 dwm-float-border-color-20231008-3a7ea45f.diff
 dwm-killunsel-ceac8c91ff.diff
 dwm-rotatestack-20161021-ab9571b.diff
