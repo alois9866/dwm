@@ -4,7 +4,6 @@ dwm-refreshrate-20230826-9554a10.diff
 dwm-uselessgap-20211119-58414bee958f2.diff
 dwm-notitle-6.2.diff
 dwm-float-border-color-20231008-3a7ea45f.diff
-dwm-killunsel-ceac8c91ff.diff
 dwm-rotatestack-20161021-ab9571b.diff
 dwm-center-6.2.diff
 dwm-hide_vacant_tags-6.3.diff
