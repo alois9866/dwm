@@ -10,8 +10,8 @@ static const char *fonts[]          = { "ComicCode Nerd Font:size=8" };
 static const char dmenufont[]       = "ComicCode Nerd Font:size=8";
 static const char *colors[][4]      = {
 	/*               fg         bg         border     float bd. */
-	[SchemeNorm] = { "#c8d3f5", "#222436", "#222436", "#ffc777" },
-	[SchemeSel]  = { "#82aaff", "#222436", "#82aaff", "#ffc777" },
+	[SchemeNorm] = { "#c8d3f5", "#222436", "#222436", "#ff757f" },
+	[SchemeSel]  = { "#82aaff", "#222436", "#ffc777", "#ff757f" },
 };
 static const unsigned int baralpha = 10;
 static const unsigned int borderalpha = 208;
